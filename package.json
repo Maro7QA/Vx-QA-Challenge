@@ -8,5 +8,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "mochawesome": "^7.1.3"
+  },
+  "devDependencies": {
+    "codeceptjs": "^3.6.4"
+  }
 }

@@ -3,14 +3,14 @@ As a Verivox user, I want to use the Privathaftpflicht calculator and tariff sea
 so that I can select the best available tariff based on price.
 
 Background: Go to PLI result list page
- Given that I can open www.verivox.de
+ Given I open www.verivox.de
    And I select accept all cookies 
   When I navigate to Versicherungen and select Privathaftpflicht 
    And I enter age "38" and Single ohne Kinder
   Then I go to the Privathaftpflicht personal information page
    And I enter birth date "20.01.1982"
    And I enter zip code "13088" 
-   And I click the "Jetzt vergleichen" button
+  Then I click the "Jetzt vergleichen" button
  
 Scenario: [S101] Verify the PLI calculator @alltests @scenario1
     Then I should see a page that lists the available tariffs for my selection
@@ -35,5 +35,3 @@ Scenario: [S103] Verify offer details for a selected tariff @alltests @scenario3
     And I see the Zum Online-Antrag button
     Then I verify both Tarifdetails and Zum Online-Antrag buttons are shown
     And I verify the expected page contents and tariff details for your selected tariff are shown
-
-

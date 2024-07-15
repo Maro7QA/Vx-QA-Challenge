@@ -3,12 +3,12 @@ exports.config = {
   helpers: {
     Playwright: {
       browser: 'chromium',
-      url: 'https://www.verivox.de/',
+      url: 'https://www.verivox.de',
       show: true
     }
   },
   include: {
-    I: './steps_file'
+    I: './steps_file.js'
   },
   mocha: {},
   bootstrap: null,
@@ -16,8 +16,8 @@ exports.config = {
   teardown: null,
   hooks: [],
   gherkin: {
-    features: './features/**/*.feature',
-    steps: './src/steps/*.ts'
+    features: './features/*.feature',
+    steps: './src/step_definitions/*.js'
   },
   plugins: {
     screenshotOnFail: {
@@ -34,6 +34,6 @@ exports.config = {
       timeout: 0
     }
   ],
-  tests: './*_test.ts',
+  tests: './tests/**/*_test.*s',
   name: 'Vx-QA-Challenge'
 }
