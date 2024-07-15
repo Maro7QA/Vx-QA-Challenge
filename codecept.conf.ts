@@ -3,7 +3,7 @@ exports.config = {
   helpers: {
     Playwright: {
       browser: 'chromium',
-      url: 'http://localhost',
+      url: 'https://www.verivox.de/',
       show: true
     }
   },
@@ -16,8 +16,8 @@ exports.config = {
   teardown: null,
   hooks: [],
   gherkin: {
-    features: './features/*.feature',
-    steps: ['./step_definitions/steps.ts']
+    features: './features/**/*.feature',
+    steps: './src/steps/*.ts'
   },
   plugins: {
     screenshotOnFail: {
