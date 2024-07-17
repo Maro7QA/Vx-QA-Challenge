@@ -14,7 +14,7 @@ This repository contains test automation scripts using the Playwright and Codece
 	4.	Retries
 	5.	Browser Switch
 	6.	Report
-    
+
 **Installation**
 
 Technologies Used
@@ -38,8 +38,7 @@ Clone the repository: git clone https://github.com/Maro7QA/Vx-QA-Challenge.git
 1.  Install Node.js and npm:
     •	Install via Homebrew:
             ```brew install node```
-
-Verify the installation:
+    •	Verify the installation:
             ```
             node -v
             npm -v
@@ -97,7 +96,7 @@ To run tests in different browsers, set the global BROWSER variable. The default
 1.	Run tests in Firefox:
     ``BROWSER='firefox' npx codeceptjs run -g @scenario1``
 
-Follow these instructions to set up and run your tests efficiently. Adjust the commands and configurations as needed for your specific use case. If you encounter any issues, refer to the official documentation of the respective tools or reach out for support.
-
 **Report**
-run ``npx codeceptjs run --reporter mochawesome``  to create HTML report in mochawesome-report
+    run ``npx codeceptjs run --reporter mochawesome``  to create HTML report in mochawesome-report
+
+Follow these instructions to set up and run your tests efficiently. Adjust the commands and configurations as needed for your specific use case. If you encounter any issues, refer to the official documentation of the respective tools or reach out for support.
