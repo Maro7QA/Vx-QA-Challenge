@@ -1,13 +1,10 @@
 
 name: Vx QA Challenge
 
-on: 
+on:  
   schedule:
   - cron: '0 8 */2 * *'  # Schedule for tests every 2nd day at 8am
-
-  push:
- 
-    
+   
 jobs:
   challenge_tests:
     runs-on: ubuntu-latest
