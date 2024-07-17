@@ -98,7 +98,7 @@ async loadAllRemainingTariffs(){
 
 async verifyTotalNumberOfTariffsAboveResultlistMatchesNumberofAllTariffs(){
     const numberOfTotalTariff = await this.grabTotalTariffNumber();
-    totalTariffs=numberOfTotalTariff[1];
+    const totalTariffs=numberOfTotalTariff[1];
     I.scrollPageToBottom();
     I.waitForVisible(`[id*="productIndex${parseInt(totalTariffs)}"]`);
     I.seeElement(`[id*="productIndex${parseInt(totalTariffs)}"]`); // verify if tariff number shown in filter section does match with final tariff of result list
