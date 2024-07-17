@@ -36,15 +36,21 @@ Clone the repository: git clone https://github.com/Maro7QA/Vx-QA-Challenge.git
 
 1.  Install Node.js and npm:
 •	Install via Homebrew:
+        ```
         brew install node
+        ```
 
 Verify the installation:
+        ```
         node -v
         npm -v
+        ```
 2.	Install Playwright:
+        ```
         npm install playwright
+        ```
 3.	Install CodeceptJS:
-        npm install codeceptjs
+        ````npm install codeceptjs````
 4.	Install Chai:
         npm install chai
 
