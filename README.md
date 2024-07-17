@@ -56,7 +56,7 @@ Clone the repository: git clone https://github.com/Maro7QA/Vx-QA-Challenge.git
 	    •	Download and install from Node.js official site.
 	    •	Verify the installation:
             ```node -v
-            npm -v````
+            npm -v```
 
 2.	Install Playwright:
         ```npm install playwright```
