@@ -27,7 +27,7 @@ jobs:
       
       - name: Install dependencies Playwrights
         run: |
-            npx playwright install-deps
+          npm install --save-dev playwright@^1.18
       
       - name: Download new browser
         run: |
