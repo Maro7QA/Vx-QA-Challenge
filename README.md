@@ -14,22 +14,23 @@ This repository contains test automation scripts using the Playwright and Codece
 	4.	Retries
 	5.	Browser Switch
 	6.	Report
+ 	7.	Cron-job tests running in cloud
 
 **Installation**
 
-Technologies Used
+# Technologies Used
 
 - [CodeceptJS](https://codecept.io/): A modern end-to-end testing framework for NodeJS.
 - [Playwright](https://playwright.dev/): A browser automation library that provides a single API to automate Chromium, Firefox, and WebKit.
 
-Prerequisites
+# Prerequisites
 
 Ensure you have the following tools installed on your machine:
 
 - [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/) (Node Package Manager)
 
-Getting Started
+# Getting Started
 
 Clone the repository: git clone https://github.com/Maro7QA/Vx-QA-Challenge.git
 
@@ -119,4 +120,10 @@ To run tests in different browsers, set the global BROWSER variable. The default
 
 Run ``npx codeceptjs run --reporter mochawesome``  to create HTML report in mochawesome-report
 
-Follow these instructions to set up and run your tests efficiently. Adjust the commands and configurations as needed for your specific use case. If you encounter any issues, refer to the official documentation of the respective tools or reach out for support.
+**Cron-job tests running in cloud**
+
+Automated tests are scheduled to run every other day at 8 AM via a cron job on a Linux machine. This setup ensures that the test suite is executed regularly to catch any potential issues promptly. The default browser is Chromium.
+
+The cron job configuration is managed within a GitHub Actions workflow. You can configure this job by editing the .yml file located in the .github/workflows directory of our repository.
+
+For more details and to view the job configuration, please visit our GitHub Actions workflow: https://github.com/Maro7QA/Vx-QA-Challenge/actions/workflows/main.yml
