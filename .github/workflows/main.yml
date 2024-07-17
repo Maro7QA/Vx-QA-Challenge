@@ -1,0 +1,38 @@
+
+name: Vx QA Challenge
+
+on: 
+  schedule:
+  - cron: '0 8 */2 * *'  # Schedule for tests every 2nd day at 8am
+
+  push:
+ 
+    
+jobs:
+  challenge_tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "14"
+
+      - name: Install dependencies
+        run: |
+          npm install
+      
+    #  - name: Install dependencies Playwrights
+    #    run: |
+     #       npx playwright install-deps
+      
+      - name: Download new browser
+        run: |
+            npx playwright install chromium
+
+      - name: Run Playwright CodeceptJS tests
+        run: |
+         URL_TO_TEST='https://www.magentasport.de' RETRY=1 BROWSER='firefox' xvfb-run npx codeceptjs run -g @alltests --steps --reporter mochawesome
