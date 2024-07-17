@@ -35,4 +35,4 @@ jobs:
 
       - name: Run Playwright CodeceptJS tests
         run: |
-         URL_TO_TEST='https://www.magentasport.de' RETRY=1 BROWSER='firefox' xvfb-run npx codeceptjs run -g @alltests --steps --reporter mochawesome
+         RETRY=1 xvfb-run npx codeceptjs run -g @alltests --steps --reporter mochawesome
