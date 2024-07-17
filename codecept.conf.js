@@ -1,8 +1,12 @@
+// require dotenv and configure
+require('dotenv').config();
+
 exports.config = {
   output: './output',
+  retry: process.env.RETRY || 0,
   helpers: {
     Playwright: {
-      browser: 'chromium',
+      browser: process.env.BROWSER || 'chromium',
       url: 'https://www.verivox.de',
       show: true
     }

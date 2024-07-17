@@ -1,15 +1,14 @@
+/// <reference types='codeceptjs' />
+const calculatorPage = require("../pages/calculatorPage");
 
 Then('I enter birth date {string}', async (birthDate) => {
-  const { I } = inject();
-  I.fillField('input[name="birthDate"]', birthDate); // Adjust selector as necessary
+  calculatorPage.fillInBirthdate(birthDate);
 });
 
 Then('I enter zip code {string}', async (zipCode) => {
-  const { I } = inject();
-  I.fillField('input[name="zipCode"]', zipCode); // Adjust selector as necessary
+  calculatorPage.fillInZipCode(zipCode);
 });
 
 Then('I click the {string} button', async (buttonText) => {
-  const { I } = inject();
-  I.click(`button:has-text("${buttonText}")`);
+ calculatorPage.selectSubmitButton(buttonText);
 });
