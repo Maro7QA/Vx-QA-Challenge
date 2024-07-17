@@ -36,9 +36,9 @@ Clone the repository: git clone https://github.com/Maro7QA/Vx-QA-Challenge.git
 # Mac
 
 1.  Install Node.js and npm:
-    •	Install via Homebrew:
+        •	Install via Homebrew:
             ```brew install node```
-    •	Verify the installation:
+        •	Verify the installation:
             ```
             node -v
             npm -v
@@ -53,10 +53,10 @@ Clone the repository: git clone https://github.com/Maro7QA/Vx-QA-Challenge.git
 # Windows
 
 1.	Install Node.js and npm:
-	•	Download and install from Node.js official site.
-	•	Verify the installation:
-        ```node -v
-        npm -v````
+	    •	Download and install from Node.js official site.
+	    •	Verify the installation:
+            ```node -v
+            npm -v````
 
 2.	Install Playwright:
         ```npm install playwright```
