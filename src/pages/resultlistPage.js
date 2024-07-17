@@ -24,7 +24,8 @@ class ResultlistPage {
     tariffDetailsButtonAboveId='(//*[@class="button secondary button-toggle open"])'
     tariffDetailsButtonMinimizeId='[class="button-toggle-frameless open"]'
     detailsNavigationheaderId= '[class="navigation"]'
-    productIndexId='[id="productIndexXX_XX-checkbox"]'
+    productIndexCheckboxId='[id="productIndexXX_XX-checkbox"]'
+    productIndexId='[id*="productIndexXX"]'
      
 verifyResultlistPageLoadsTariffs(){
     I.wait(1); //stabilzer
@@ -66,9 +67,9 @@ async verifyTotalNumberOfTariffsIsShownAboveResultlist(){
    
 verifyOnlyCertainNumberOfTariffsAreShown(number){
     I.wait(1);//stabilzer
-    const productIndexLastTariff=this.productIndexId.replace("XX_XX",`${number}_${number}`);
+    const productIndexLastTariff=this.productIndexCheckboxId.replace("XX_XX",`${number}_${number}`);
     I.seeElement(productIndexLastTariff); // verify that tariff number is visible
-    const productIndexLastTariffPlusOne=this.productIndexId.replace("XX_XX",`${parseInt(number)+1}_${parseInt(number)+1}`); 
+    const productIndexLastTariffPlusOne=this.productIndexCheckboxId.replace("XX_XX",`${parseInt(number)+1}_${parseInt(number)+1}`); 
     I.dontSeeElement(productIndexLastTariffPlusOne); // verify that tariff number + 1 is not visible
 }
 
@@ -79,7 +80,7 @@ verifyMoreTariffsAreLoaded(number){
     I.wait(1);//stabilzer
     I.scrollPageToBottom();
     I.wait(1);//stabilzer
-    const productIndexLastTariff=this.productIndexId.replace("XX_XX",`${numberTotal}_${numberTotal+1}`);
+    const productIndexLastTariff=this.productIndexCheckboxId.replace("XX_XX",`${numberTotal}_${numberTotal+1}`);
     I.seeElement(productIndexLastTariff);
 }
   
@@ -100,10 +101,8 @@ async verifyTotalNumberOfTariffsAboveResultlistMatchesNumberofAllTariffs(){
     const numberOfTotalTariff = await this.grabTotalTariffNumber();
     const totalTariffs=numberOfTotalTariff[1];
     I.scrollPageToBottom();
-    I.waitForVisible(`[id*="productIndex${parseInt(totalTariffs)}"]`);
-    I.seeElement(`[id*="productIndex${parseInt(totalTariffs)}"]`); // verify if tariff number shown in filter section does match with final tariff of result list
-    I.dontSeeElement(`[id*="productIndex${parseInt(totalTariffs)+1}"]`); // verify that tariff number + 1 is not visible
-
+    I.waitForVisible(this.productIndexId.replace("XX",`${parseInt(totalTariffs)}`),10);// verify if tariff number shown in filter section does match with final tariff of result list
+    I.dontSeeElement(this.productIndexId.replace("XX",`${parseInt(totalTariffs)+1}`)); // verify that tariff number + 1 is not visible
 }
   
   verifyPriceOfTariff(number){

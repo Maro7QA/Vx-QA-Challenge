@@ -2,16 +2,16 @@
 const resultlistPage = require("../pages/resultlistPage");
 const { I } = inject();
 
-Then('I should see a page that lists the available tariffs for my selection', async () => {
+Then('I should see a page that lists the available tariffs for my selection', () => {
    resultlistPage.verifyResultlistPageLoadsTariffs();
    resultlistPage.verifyResultlistPageShowsResults();
   });
   
-  Then('I see at least {string} tariffs', async (number) => {
-    resultlistPage.verifyNumberOfTariffsAreShownAtLeast(number);
+  Then('I see at least {string} tariffs', (numberOfTariffs) => {
+    resultlistPage.verifyNumberOfTariffsAreShownAtLeast(numberOfTariffs);
   });
   
-  When('I see the tariff result list page displayed', async () => {
+  When('I see the tariff result list page displayed', () => {
     resultlistPage.verifyResultlistPageLoadsTariffs();
     resultlistPage.verifyTariffResultlistPageIsDisplayed();
   });
@@ -20,19 +20,19 @@ Then('I should see a page that lists the available tariffs for my selection', as
     await resultlistPage.verifyTotalNumberOfTariffsIsShownAboveResultlist();
  });
   
-  When('I scroll to the end of the result list page', async () => {
+  When('I scroll to the end of the result list page', () => {
     I.scrollPageToBottom();
   });
   
-  Then('I should see only the first {string} tariffs displayed', async (number) => {
-    resultlistPage.verifyNumberOfTariffsAreShownAtLeast();
+  Then('I should see only the first {string} tariffs displayed', (number) => {
+    resultlistPage.verifyOnlyCertainNumberOfTariffsAreShown(number);
  });
   
-  When('I click on the button labeled {string}', async (buttonText) => {
+  When('I click on the button labeled {string}', (buttonText) => {
     I.click(`${buttonText}`);
   });
   
-  Then('I should see the next {string} tariffs displayed', async (number) => {
+  Then('I should see the next {string} tariffs displayed', (number) => {
     resultlistPage.verifyMoreTariffsAreLoaded(number);
   });
   
@@ -40,8 +40,7 @@ Then('I should see a page that lists the available tariffs for my selection', as
     await resultlistPage.loadAllRemainingTariffs();
   });
   
-  Then('The weitere Tarife laden button is no longer displayed when all the tariffs are visible', async () => {
-    const { I } = inject();
+  Then('The weitere Tarife laden button is no longer displayed when all the tariffs are visible', () => {
     I.dontSeeElement(resultlistPage.loadMoreButtonId);
   });
   
@@ -49,30 +48,30 @@ Then('I should see a page that lists the available tariffs for my selection', as
     await resultlistPage.verifyTotalNumberOfTariffsAboveResultlistMatchesNumberofAllTariffs();
   });
   
-  Then('I should see the tariff price of the {string} tariff', async (number) => {
+  Then('I should see the tariff price of the {string} tariff', (number) => {
     resultlistPage.verifyPriceOfTariff(number);
   });
   
-  When('I open tariff details for {string} tariff', async (number) => {
+  When('I open tariff details for {string} tariff', (number) => {
     resultlistPage.selectOpenTariffDetailsForASingleTariff(number);
   });
   
-  Then('I see tariff details sections: Weitere Leistungen, Allgemein, Tätigkeiten und Hobbys, Miete & Immobilien and Dokumente', async () => {
+  Then('I see tariff details sections: Weitere Leistungen, Allgemein, Tätigkeiten und Hobbys, Miete & Immobilien and Dokumente', () => {
   resultlistPage.verifyDetailsSectionInHeader();
   });
 
-  Then('I see the Zum Online-Antrag button', async () => {
+  Then('I see the Zum Online-Antrag button', () => {
     I.see('ZUM ONLINE-ANTRAG');
   });
   
-  Then('I verify both Tarifdetails and Zum Online-Antrag buttons are shown', async () => {
+  Then('I verify both Tarifdetails and Zum Online-Antrag buttons are shown', () => {
     //two Zum Online-Antrag buttons
     resultlistPage.verifySubmitButtonsAreShown();
     //two tariff details buttons
     resultlistPage.verifyTariffDetailsButtonsAreShown();
   });
   
-  Then('I verify the expected page contents and tariff details for your selected tariff are shown', async () => {
+  Then('I verify the expected page contents and tariff details for your selected tariff are shown', () => {
     // Check the details of the selected tariff
     resultlistPage.tariffDetailsSectionAreShown();  
   });
