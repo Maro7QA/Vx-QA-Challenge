@@ -117,6 +117,6 @@ To run tests in different browsers, set the global BROWSER variable. The default
 
 **Report**
 
-    Run ``npx codeceptjs run --reporter mochawesome``  to create HTML report in mochawesome-report
+Run ``npx codeceptjs run --reporter mochawesome``  to create HTML report in mochawesome-report
 
 Follow these instructions to set up and run your tests efficiently. Adjust the commands and configurations as needed for your specific use case. If you encounter any issues, refer to the official documentation of the respective tools or reach out for support.
