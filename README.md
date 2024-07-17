@@ -78,7 +78,7 @@ Clone the repository: git clone https://github.com/Maro7QA/Vx-QA-Challenge.git
 1.	Run all tests:
     ```npx codeceptjs run -g @alltests```
 2.	Run a specific scenario:
-    ``npx codeceptjs run -g @scenario1``
+    ``npx codeceptjs run -g @scenario1`` or ``npx codeceptjs run -g S101``
 3. Run tests in parallel:
     ``npx codeceptjs run-workers 2 -g @alltests``
 
