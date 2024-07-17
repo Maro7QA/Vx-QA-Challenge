@@ -7,14 +7,14 @@ This repository contains test automation scripts using the Playwright and Codece
 **Table of Contents**
 
 	1.	Installation
-	•	Mac
-	•	Windows
+	    •	Mac
+	    •	Windows
 	2.	Project Structure
 	3.	Running Tests
 	4.	Retries
 	5.	Browser Switch
-    6.  Report
-
+	6.	Report
+    
 **Installation**
 
 Technologies Used
