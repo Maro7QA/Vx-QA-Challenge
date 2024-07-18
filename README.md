@@ -116,6 +116,10 @@ To run tests in different browsers, set the global BROWSER variable. The default
    
    		BROWSER='firefox' npx codeceptjs run -g @scenario1
 
+2.	Run tests in Webkit:
+   
+   		BROWSER='webkit' npx codeceptjs run -g @scenario1
+
 **Report**
 
 Run ``npx codeceptjs run --reporter mochawesome``  to create HTML report in mochawesome-report
