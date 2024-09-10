@@ -3,7 +3,7 @@ name: Vx QA Challenge
 
 on:  
   schedule:
-  - cron: '0 8 */2 * *'  # Schedule for tests every 2nd day at 8am
+  - cron: '0 8 * 4 4'  # Schedule for tests every 2nd day at 8am
    
 jobs:
   challenge_tests:
